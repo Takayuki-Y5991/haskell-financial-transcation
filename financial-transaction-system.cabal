@@ -1,0 +1,89 @@
+cabal-version: 2.2
+
+-- This file has been generated from package.yaml by hpack version 0.37.0.
+--
+-- see: https://github.com/sol/hpack
+
+name:           financial-transaction-system
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/financial-transaction-system#readme>
+homepage:       https://github.com/githubuser/financial-transaction-system#readme
+bug-reports:    https://github.com/githubuser/financial-transaction-system/issues
+author:         Author name here
+maintainer:     example@example.com
+copyright:      2024 Author name here
+license:        BSD-3-Clause
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    CHANGELOG.md
+
+source-repository head
+  type: git
+  location: https://github.com/githubuser/financial-transaction-system
+
+library
+  exposed-modules:
+      Application.Auth
+      Application.UserService
+      Domain.Types
+      Domain.User
+      Infrastructure.Persistence.Config
+      Infrastructure.Persistence.UserRepository
+      Interface.API
+      Lib
+  other-modules:
+      Paths_financial_transaction_system
+  autogen-modules:
+      Paths_financial_transaction_system
+  hs-source-dirs:
+      src
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints
+  build-depends:
+      aeson
+    , base >=4.7 && <5
+    , servant-server
+    , wai
+    , warp
+  default-language: Haskell2010
+
+executable financial-transaction-system-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_financial_transaction_system
+  autogen-modules:
+      Paths_financial_transaction_system
+  hs-source-dirs:
+      app
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      aeson
+    , base
+    , financial-transaction-system
+    , servant-server
+    , wai
+    , warp
+  default-language: Haskell2010
+
+test-suite financial-transaction-system-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_financial_transaction_system
+  autogen-modules:
+      Paths_financial_transaction_system
+  hs-source-dirs:
+      test
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      aeson
+    , base
+    , financial-transaction-system
+    , hspec
+    , hspec-wai
+    , hspec-wai-json
+    , servant-server
+    , wai
+    , warp
+  default-language: Haskell2010
